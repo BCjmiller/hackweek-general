@@ -1,0 +1,44 @@
+    1  mkdir hack
+    2  git clone https://github.com/FFmpeg/FFmpeg.git
+    3  cd FFmpeg/
+    4  sudo apt-get install mediainfo
+    5  apt-get update -qq && apt-get -y install   autoconf   automake   build-essential   cmake   git   libass-dev   libfreetype6-dev   libsdl2-dev   libtheora-dev   libtool   libva-dev   libvdpau-dev   libvorbis-dev   libxcb1-dev   libxcb-shm0-dev   libxcb-xfixes0-dev   mercurial   pkg-config   texinfo   wget   zlib1g-dev
+    6  sudo apt-get update -qq && sudo apt-get -y install   autoconf   automake   build-essential   cmake   git   libass-dev   libfreetype6-dev   libsdl2-dev   libtheora-dev   libtool   libva-dev   libvdpau-dev   libvorbis-dev   libxcb1-dev   libxcb-shm0-dev   libxcb-xfixes0-dev   mercurial   pkg-config   texinfo   wget   zlib1g-dev
+    7  git clone https://github.com/FFmpeg/FFmpeg.gitll
+    8  ll
+    9  cd ..
+   10  mv FFmpeg/ hack/
+   11  ll hack/
+   12  sudo apt-get update && sudo apt-get upgrade
+   13  grep -c ^processor /proc/cpuinfo  
+   14  sudo apt-get install yasm
+   15  apt-cache madison libx264-dev
+   16  sudo apt-get install libx264-dev
+   17  apt-cache madison libx265-dev
+   18  ll
+   19  cd hack/
+   20  mkdir ffmpeg_sources
+   21  mkdir ~/bin
+   22  if cd x265 2> /dev/null; then hg pull && hg update; else hg clone https://bitbucket.org/multicoreware/x265; fi && cd x265/build/linux && PATH="$HOME/bin:$PATH" cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$HOME/ffmpeg_build" -DENABLE_SHARED:bool=off ../../source && PATH="$HOME/bin:$PATH" make && make install
+   23  apt-cache madison libvpx-dev
+   24  sudo apt-get install libvpx-dev
+   25  df 0h
+   26  df -h
+   27  sudo apt-get install libfdk-aac-dev
+   28  apt-cache madison libmp3lame-dev 
+   29  sudo apt-get install libmp3lame-dev
+   30  apt-cache madison libopus-dev
+   31  sudo apt-get install libopus-dev
+   32  ll
+   33  cd ../../../
+   34  ll
+   35  cd ~/ffmpeg_sources && wget -O ffmpeg-snapshot.tar.bz2 https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2 && \
+   36  cd ffmpeg_sources/
+   37  wget -O ffmpeg-snapshot.tar.bz2 https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2 && tar xjvf ffmpeg-snapshot.tar.bz2 && cd ffmpeg
+   38  cd ~/ffmpeg_sources && wget -O ffmpeg-snapshot.tar.bz2 https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2 && tar xjvf ffmpeg-snapshot.tar.bz2 && cd ffmpeg && PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure   --prefix="$HOME/ffmpeg_build"   --pkg-config-flags="--static"   --extra-cflags="-I$HOME/ffmpeg_build/include"   --extra-ldflags="-L$HOME/ffmpeg_build/lib"   --extra-libs="-lpthread -lm"   --bindir="$HOME/bin"   --enable-gpl   --enable-libass   --enable-libfdk-aac   --enable-libfreetype   --enable-libmp3lame   --enable-libopus   --enable-libtheora   --enable-libvorbis   --enable-libvpx   --enable-libx264   --enable-libx265   --enable-nonfree && PATH="$HOME/bin:$PATH" make
+   39  ll
+   40  cd ffmpeg && PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure   --prefix="$HOME/ffmpeg_build"   --pkg-config-flags="--static"   --extra-cflags="-I$HOME/ffmpeg_build/include"   --extra-ldflags="-L$HOME/ffmpeg_build/lib"   --extra-libs="-lpthread -lm"   --bindir="$HOME/bin"   --enable-gpl   --enable-libass   --enable-libfdk-aac   --enable-libfreetype   --enable-libmp3lame   --enable-libopus   --enable-libtheora   --enable-libvorbis   --enable-libvpx   --enable-libx264   --enable-libx265   --enable-nonfree && PATH="$HOME/bin:$PATH" make
+   41  PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure   --prefix="$HOME/ffmpeg_build"   --pkg-config-flags="--static"   --extra-cflags="-I$HOME/ffmpeg_build/include"   --extra-ldflags="-L$HOME/ffmpeg_build/lib"   --extra-libs="-lpthread -lm"   --bindir="$HOME/bin"   --enable-gpl   --enable-libass   --enable-libfdk-aac   --enable-libfreetype   --enable-libmp3lame   --enable-libopus   --enable-libtheora   --enable-libvorbis   --enable-libvpx   --enable-libx264   --enable-libx265   --enable-nonfree && PATH="$HOME/bin:$PATH" make
+   42  make install && hash -r
+   43  sudo apt-get install youtube-dl
+   44  history

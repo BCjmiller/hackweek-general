@@ -1,0 +1,112 @@
+    1  ll
+    2  chmod +x NVIDIA-Linux-x86_64-390.46.run 
+    3  sudo ./NVIDIA-Linux-x86_64-390.46.run 
+    4  sudo apt-get update && sudo apt-get -y upgrade
+    5  uname -r
+    6  sudo apt-get install -y linux-image-extra-`uname -r`
+    7  sudo apt-get install gcc
+    8  sudo ./NVIDIA-Linux-x86_64-390.46.run 
+    9  sudo apt-get install make
+   10  sudo ./NVIDIA-Linux-x86_64-3
+   11  less /var/log/nvidia-installer.log 
+   12  cat /var/log/nvidia-installer.log 
+   13  nvclock
+   14  sudo reboot
+   15  sudo apt-get update && sudo apt-get -y upgrade
+   16  ll
+   17  sudo dpkg -i cuda-repo-ubuntu1604_9.1.85-1_amd64.deb
+   18  sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+   19  sudo apt-get update
+   20  sudo apt-get install cuda
+   21  histor
+   22  history
+   23  mkdir hack
+   24  cd hack/
+   25  git clone https://github.com/FFmpeg/FFmpeg.git
+   26  cd FFmpeg/
+   27  ./configure --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
+   28  sudo apt-get install yasm
+   29  ./configure --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
+   30  git clone https://github.com/FFmpeg/nv-codec-headers.git
+   31  ll
+   32  mv nv-codec-headers/ ..
+   33  ll
+   34  cd ..
+   35  ll
+   36  cd nv-codec-headers/
+   37  ll
+   38  make
+   39  sudo make install
+   40  cd ../FFmpeg/
+   41  ./configure --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
+   42  make -j 10
+   43  ll
+   44  ./ffmpeg -v
+   45  ./ffmpeg -v=help
+   46  ./ffmpeg -help
+   47  sudo make -j 10 install
+   48  ffmpeg 
+   49  history
+   50  ll
+   51  mkdir vid
+   52  cd vid/
+   53  sudo apt-get install youtube-dl
+   54  ll
+   55  cd ..
+   56  ll
+   57  cd vid/
+   58  ll
+   59  youtube-dl https://www.youtube.com/watch?v=qT5JfLaUb4I
+   60  ll
+   61  mv 1992\ Mk2\ Toyota\ MR2\ SW20\ Gen\ 2\ Turbo\ Swap\ Daily\ Tuner\ by\ Prime\ -\ Regular\ Car\ Reviews-qT5JfLaUb4I.mp4 rcr_mr2_sw20_turbo.mp4
+   62  mkdir in
+   63  mv rcr_mr2_sw20_turbo.mp4 in/
+   64  ll
+   65  mkdir out
+   66  rmdir out
+   67  mv in tests
+   68  cd tests/
+   69  ll
+   70  ffmpeg -vsync 0 -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -f rawvideo <output.yuv>
+   71  ffmpeg -vsync 0 -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -f rawvideo output.yuv
+   72  ll
+   73  df -h
+   74  ll
+   75  ll -h
+   76  rm -f output.yuv
+   77  ll
+   78  df -h
+   79  sudo reboot
+   80  cd vid/
+   81  ll
+   82  cd tests/
+   83  ll
+   84  mkdir rcr_mr2_sw20_turbo
+   85  mv rcr_mr2_sw20_turbo.mp4 rcr_mr2_sw20_turbo
+   86  cd rcr_mr2_sw20_turbo/
+   87  ll
+   88  df -h
+   89  ffmpeg -vsync 0 -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -f rawvideo bitstream.yuv
+   90  ll
+   91  rm bitstream.yuv 
+   92  time ffmpeg -vsync 0 -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -f rawvideo bitstream.yuv
+   93  ffmpeg -f rawvideo -s:v 1920x1080 -r 30 -pix_fmt yuv420p -i bitstream.yuv -c:v h264_nvenc -preset slow -cq 10 -bf 2 -g 150 yuv_to.mp4
+   94  ll
+   95  rm yuv_to.mp4 
+   96  mv bitstream.yuv source_to.yuv
+   97  ll
+   98  history
+   99  time ffmpeg -f rawvideo -s:v 1920x1080 -r 30 -pix_fmt yuv420p -i source_to.yuv -c:v h264_nvenc -preset slow -cq 10 -bf 2 -g 150 yuv_to.mp4
+  100  sudo apt-get install mediainfo
+  101  mediainfo rcr_mr2_sw20_turbo.mp4 
+  102  time ffmpeg -hwaccel cuvid -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -vf scale_npp=1280:720 -c:v h264_nvenc one_to_one.mp4
+  103  time ffmpeg -hwaccel cuvid -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -vf scale_npp=1280:720 -vcodec h264_nvenc multi_0_out.mp4 -vf scale_npp 640:480 -vcodec h264_nvenc multi_1_out.mp4
+  104  rm multi_0_out.mp4 
+  105  time ffmpeg -hwaccel cuvid -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -vf scale_npp=1280:720 -vcodec h264_nvenc multi_0_out.mp4 -vf scale_npp=960:540 -vcodec h264_nvenc multi_1_out.mp4
+  106  ll
+  107  ll -h
+  108  df -h
+  109  ll
+  110  cd hack/
+  111  ll
+  112  history
