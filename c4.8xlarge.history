@@ -10,7 +10,7 @@
    10  mv FFmpeg/ hack/
    11  ll hack/
    12  sudo apt-get update && sudo apt-get upgrade
-   13  grep -c ^processor /proc/cpuinfo  
+   13  grep -c ^processor /proc/cpuinfo
    14  sudo apt-get install yasm
    15  apt-cache madison libx264-dev
    16  sudo apt-get install libx264-dev
@@ -25,7 +25,7 @@
    25  df 0h
    26  df -h
    27  sudo apt-get install libfdk-aac-dev
-   28  apt-cache madison libmp3lame-dev 
+   28  apt-cache madison libmp3lame-dev
    29  sudo apt-get install libmp3lame-dev
    30  apt-cache madison libopus-dev
    31  sudo apt-get install libopus-dev

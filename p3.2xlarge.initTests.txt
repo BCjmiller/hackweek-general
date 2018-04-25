@@ -1,4 +1,4 @@
-ubuntu@ip-10-96-233-131:~/vid/tests/rcr_mr2_sw20_turbo$ mediainfo rcr_mr2_sw20_turbo.mp4 
+ubuntu@ip-10-96-233-131:~/vid/tests/rcr_mr2_sw20_turbo$ mediainfo rcr_mr2_sw20_turbo.mp4
 General
 Complete name                            : rcr_mr2_sw20_turbo.mp4
 Format                                   : MPEG-4
@@ -62,7 +62,7 @@ Encoded date                             : UTC 1904-01-01 00:00:00
 Tagged date                              : UTC 1904-01-01 00:00:00
 
 
-ubuntu@ip-10-96-233-131:~/vid/tests/rcr_mr2_sw20_turbo$ time ffmpeg -vsync 0 -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -f rawvideo bitstream.yuv
+ubuntu@ip-10-96-233-131:~/vid/tests/rcr_mr2_sw20_turbo$ time ffmpeg -vsync 0 -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -f rawvideo source_to.yuv
 ffmpeg version N-90813-g4ac0ff8 Copyright (c) 2000-2018 the FFmpeg developers
   built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
   configuration: --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
@@ -99,12 +99,13 @@ Output #0, rawvideo, to 'bitstream.yuv':
     Metadata:
       handler_name    : VideoHandler
       encoder         : Lavc58.19.100 rawvideo
-frame=13127 fps= 92 q=-0.0 Lsize=39873262kB time=00:07:17.73 bitrate=746211.8kbits/s speed=3.08x    
+frame=13127 fps= 92 q=-0.0 Lsize=39873262kB time=00:07:17.73 bitrate=746211.8kbits/s speed=3.08x
 video:39873262kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
 
 real	2m23.324s
 user	0m15.468s
 sys	0m27.072s
+
 ubuntu@ip-10-96-233-131:~/vid/tests/rcr_mr2_sw20_turbo$ time ffmpeg -f rawvideo -s:v 1920x1080 -r 30 -pix_fmt yuv420p -i source_to.yuv -c:v h264_nvenc -preset slow -cq 10 -bf 2 -g 150 yuv_to.mp4
 ffmpeg version N-90813-g4ac0ff8 Copyright (c) 2000-2018 the FFmpeg developers
   built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
@@ -131,12 +132,13 @@ Output #0, mp4, to 'yuv_to.mp4':
       encoder         : Lavc58.19.100 h264_nvenc
     Side data:
       cpb: bitrate max/min/avg: 0/0/2000000 buffer size: 4000000 vbv_delay: -1
-frame=13127 fps=255 q=43.0 Lsize=  113077kB time=00:07:17.50 bitrate=2117.3kbits/s speed= 8.5x    
+frame=13127 fps=255 q=43.0 Lsize=  113077kB time=00:07:17.50 bitrate=2117.3kbits/s speed= 8.5x
 video:112954kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.109057%
 
 real	0m51.780s
 user	0m8.648s
 sys	0m9.272s
+
 ubuntu@ip-10-96-233-131:~/vid/tests/rcr_mr2_sw20_turbo$ time ffmpeg -hwaccel cuvid -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -vf scale_npp=1280:720 -c:v h264_nvenc one_to_one.mp4
 ffmpeg version N-90813-g4ac0ff8 Copyright (c) 2000-2018 the FFmpeg developers
   built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
@@ -181,13 +183,14 @@ Output #0, mp4, to 'one_to_one.mp4':
     Metadata:
       handler_name    : SoundHandler
       encoder         : Lavc58.19.100 aac
-frame=13132 fps=600 q=32.0 Lsize=  116180kB time=00:07:17.70 bitrate=2174.4kbits/s dup=5 drop=0 speed=  20x    
+frame=13132 fps=600 q=32.0 Lsize=  116180kB time=00:07:17.70 bitrate=2174.4kbits/s dup=5 drop=0 speed=  20x
 video:108938kB audio:6879kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.313504%
 [aac @ 0x3f99a40] Qavg: 335.471
 
 real	0m23.214s
 user	0m10.172s
 sys	0m4.480s
+
 ubuntu@ip-10-96-233-131:~/vid/tests/rcr_mr2_sw20_turbo$ time ffmpeg -hwaccel cuvid -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -vf scale_npp=1280:720 -vcodec h264_nvenc multi_0_out.mp4 -vf scale_npp=960:540 -vcodec h264_nvenc multi_1_out.mp4
 ffmpeg version N-90813-g4ac0ff8 Copyright (c) 2000-2018 the FFmpeg developers
   built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
@@ -250,7 +253,7 @@ Output #1, mp4, to 'multi_1_out.mp4':
     Metadata:
       handler_name    : SoundHandler
       encoder         : Lavc58.19.100 aac
-frame=13132 fps=571 q=32.0 Lq=29.0 size=  116180kB time=00:07:17.70 bitrate=2174.4kbits/s dup=10 drop=0 speed=  19x    
+frame=13132 fps=571 q=32.0 Lq=29.0 size=  116180kB time=00:07:17.70 bitrate=2174.4kbits/s dup=10 drop=0 speed=  19x
 video:217155kB audio:13758kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
 [aac @ 0x32dc040] Qavg: 335.471
 [aac @ 0x3112e00] Qavg: 335.471
