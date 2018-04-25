@@ -1,0 +1,43 @@
+ubuntu@ip-10-96-212-165:/shared/vid/tests$ md5sum 2160p60.vp9/2160p60.vp9.webm
+8520b3843e15c809146dde9a631f2189  2160p60.vp9/2160p60.vp9.webm
+
+ubuntu@ip-10-96-212-165:/shared/vid/tests$ mediainfo 2160p60.vp9/2160p60.vp9.webm
+General
+Complete name                            : 2160p60.vp9/2160p60.vp9.webm
+Format                                   : WebM
+Format version                           : Version 4 / Version 2
+File size                                : 450 MiB
+Duration                                 : 2mn 34s
+Overall bit rate                         : 24.4 Mbps
+Writing application                      : Lavf58.13.100
+Writing library                          : Lavf58.13.100 / Lavf58.13.100
+
+Video
+ID                                       : 1
+Format                                   : VP9
+Codec ID                                 : V_VP9
+Duration                                 : 2mn 34s
+Width                                    : 3 840 pixels
+Height                                   : 2 160 pixels
+Display aspect ratio                     : 16:9
+Frame rate mode                          : Constant
+Frame rate                               : 59.940 fps
+Language                                 : English
+Default                                  : Yes
+Forced                                   : No
+DURATION                                 : 00:02:34.554000000
+
+Audio
+ID                                       : 2
+Format                                   : Opus
+Codec ID                                 : A_OPUS
+Duration                                 : 2mn 34s
+Channel(s)                               : 2 channels
+Channel positions                        : Front: L R
+Sampling rate                            : 48.0 KHz
+Bit depth                                : 32 bits
+Compression mode                         : Lossy
+Language                                 : English
+Default                                  : Yes
+Forced                                   : No
+DURATION                                 : 00:02:34.581000000

@@ -1,0 +1,57 @@
+ubuntu@ip-10-96-212-165:/shared/vid/tests$ md5sum 1440p.avc1_640032/1440p.avc1_640032.mkv
+cea8a4db8d912a824f02de65c2a880bd  1440p.avc1_640032/1440p.avc1_640032.mkv
+
+ubuntu@ip-10-96-212-165:/shared/vid/tests$ mediainfo 1440p.avc1_640032/1440p.avc1_640032.mkv
+General
+Unique ID                                : 98832195100594619034483578987873733646 (0x4A5A636E45C63295A2EB0B0D7B368C0E)
+Complete name                            : 1440p.avc1_640032/1440p.avc1_640032.mkv
+Format                                   : Matroska
+Format version                           : Version 4 / Version 2
+File size                                : 117 MiB
+Duration                                 : 2mn 34s
+Overall bit rate                         : 6 348 Kbps
+Writing application                      : Lavf58.13.100
+Writing library                          : Lavf58.13.100 / Lavf58.13.100
+ErrorDetectionType                       : Per level 1
+
+Video
+ID                                       : 1
+Format                                   : AVC
+Format/Info                              : Advanced Video Codec
+Format profile                           : High@L5
+Format settings, CABAC                   : Yes
+Format settings, ReFrames                : 3 frames
+Codec ID                                 : V_MPEG4/ISO/AVC
+Duration                                 : 2mn 34s
+Width                                    : 2 560 pixels
+Height                                   : 1 440 pixels
+Display aspect ratio                     : 16:9
+Frame rate mode                          : Constant
+Frame rate                               : 29.970 (30000/1001) fps
+Color space                              : YUV
+Chroma subsampling                       : 4:2:0
+Bit depth                                : 8 bits
+Scan type                                : Progressive
+Default                                  : Yes
+Forced                                   : No
+Color range                              : Limited
+Color primaries                          : BT.709
+Transfer characteristics                 : BT.709
+Matrix coefficients                      : BT.709
+DURATION                                 : 00:02:34.554000000
+HANDLER_NAME                             : VideoHandler
+
+Audio
+ID                                       : 2
+Format                                   : Opus
+Codec ID                                 : A_OPUS
+Duration                                 : 2mn 34s
+Channel(s)                               : 2 channels
+Channel positions                        : Front: L R
+Sampling rate                            : 48.0 KHz
+Bit depth                                : 32 bits
+Compression mode                         : Lossy
+Language                                 : English
+Default                                  : Yes
+Forced                                   : No
+DURATION                                 : 00:02:34.581000000
