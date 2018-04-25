@@ -1,0 +1,72 @@
+
+
+ubuntu@ip-10-96-233-131:~/vid/tests/rcr_mr2_sw20_turbo$ time ffmpeg -hwaccel cuvid -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -vf scale_npp=1280:720 -vcodec h264_nvenc multi_0_out.mp4 -vf scale_npp=960:540 -vcodec h264_nvenc multi_1_out.mp4
+ffmpeg version N-90813-g4ac0ff8 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
+  configuration: --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
+  libavutil      56. 15.100 / 56. 15.100
+  libavcodec     58. 19.100 / 58. 19.100
+  libavformat    58. 13.100 / 58. 13.100
+  libavdevice    58.  4.100 / 58.  4.100
+  libavfilter     7. 19.100 /  7. 19.100
+  libswscale      5.  2.100 /  5.  2.100
+  libswresample   3.  2.100 /  3.  2.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'rcr_mr2_sw20_turbo.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.13.100
+  Duration: 00:07:17.65, start: 0.000000, bitrate: 2237 kb/s
+    Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709), 1920x1080 [SAR 1:1 DAR 16:9], 2103 kb/s, 30 fps, 30 tbr, 90k tbn, 60 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 125 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (h264_cuvid) -> h264 (h264_nvenc))
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+  Stream #0:0 -> #1:0 (h264 (h264_cuvid) -> h264 (h264_nvenc))
+  Stream #0:1 -> #1:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, mp4, to 'multi_0_out.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.13.100
+    Stream #0:0(und): Video: h264 (h264_nvenc) (Main) (avc1 / 0x31637661), cuda, 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 2000 kb/s, 30 fps, 15360 tbn, 30 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.19.100 h264_nvenc
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/2000000 buffer size: 4000000 vbv_delay: -1
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      encoder         : Lavc58.19.100 aac
+Output #1, mp4, to 'multi_1_out.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.13.100
+    Stream #1:0(und): Video: h264 (h264_nvenc) (Main) (avc1 / 0x31637661), cuda, 960x540 [SAR 1:1 DAR 16:9], q=-1--1, 2000 kb/s, 30 fps, 15360 tbn, 30 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.19.100 h264_nvenc
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/2000000 buffer size: 4000000 vbv_delay: -1
+    Stream #1:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      encoder         : Lavc58.19.100 aac
+frame=13132 fps=571 q=32.0 Lq=29.0 size=  116180kB time=00:07:17.70 bitrate=2174.4kbits/s dup=10 drop=0 speed=  19x
+video:217155kB audio:13758kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[aac @ 0x32dc040] Qavg: 335.471
+[aac @ 0x3112e00] Qavg: 335.471
+
+real	0m24.333s
+user	0m18.576s
+sys	0m5.288s
