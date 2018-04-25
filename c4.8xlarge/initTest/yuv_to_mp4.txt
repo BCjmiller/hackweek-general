@@ -1,0 +1,55 @@
+ubuntu@ip-10-96-222-240:/shared/vid/tests/rcr_mr2_sw20_turbo$ time ffmpeg -f rawvideo -s:v 1920x1080 -r 30 -pix_fmt yuv420p -i source_to.yuv -c:v h264 -preset slow -bf 2 -g 150 yuv_to.mp4
+ffmpeg version N-90811-g2442cf3 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
+  configuration: --prefix=/home/ubuntu/ffmpeg_build --pkg-config-flags=--static --extra-cflags=-I/home/ubuntu/ffmpeg_build/include --extra-ldflags=-L/home/ubuntu/ffmpeg_build/lib --extra-libs='-lpthread -lm' --bindir=/home/ubuntu/bin --enable-gpl --enable-libass --enable-libfdk-aac --enable-libfreetype --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-nonfree
+  libavutil      56. 15.100 / 56. 15.100
+  libavcodec     58. 19.100 / 58. 19.100
+  libavformat    58. 13.100 / 58. 13.100
+  libavdevice    58.  4.100 / 58.  4.100
+  libavfilter     7. 19.100 /  7. 19.100
+  libswscale      5.  2.100 /  5.  2.100
+  libswresample   3.  2.100 /  3.  2.100
+  libpostproc    55.  2.100 / 55.  2.100
+[rawvideo @ 0x3ad6980] Estimating duration from bitrate, this may be inaccurate
+Input #0, rawvideo, from 'source_to.yuv':
+  Duration: 00:07:17.57, start: 0.000000, bitrate: 746495 kb/s
+    Stream #0:0: Video: rawvideo (I420 / 0x30323449), yuv420p, 1920x1080, 746496 kb/s, 30 tbr, 30 tbn, 30 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (rawvideo (native) -> h264 (libx264))
+Press [q] to stop, [?] for help
+[libx264 @ 0x3ae2700] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 AVX2 LZCNT BMI2
+[libx264 @ 0x3ae2700] profile High, level 5.0
+[libx264 @ 0x3ae2700] 264 - core 148 r2643 5c65704 - H.264/MPEG-4 AVC codec - Copyleft 2003-2015 - http://www.videolan.org/x264.html - options: cabac=1 ref=5 deblock=1:0:0 analyse=0x3:0x113 me=umh subme=8 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=34 lookahead_threads=5 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=2 b_pyramid=2 b_adapt=2 b_bias=0 direct=3 weightb=1 open_gop=0 weightp=2 keyint=150 keyint_min=15 scenecut=40 intra_refresh=0 rc_lookahead=50 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'yuv_to.mp4':
+  Metadata:
+    encoder         : Lavf58.13.100
+    Stream #0:0: Video: h264 (libx264) (avc1 / 0x31637661), yuv420p, 1920x1080, q=-1--1, 30 fps, 15360 tbn, 30 tbc
+    Metadata:
+      encoder         : Lavc58.19.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+frame=13127 fps= 67 q=-1.0 Lsize=  181763kB time=00:07:17.46 bitrate=3403.7kbits/s speed=2.23x
+video:181609kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.084779%
+[libx264 @ 0x3ae2700] frame I:117   Avg QP:19.47  size:113830
+[libx264 @ 0x3ae2700] frame P:5400  Avg QP:22.63  size: 22576
+[libx264 @ 0x3ae2700] frame B:7610  Avg QP:25.24  size:  6667
+[libx264 @ 0x3ae2700] consecutive B-frames:  8.1% 19.7% 72.2%
+[libx264 @ 0x3ae2700] mb I  I16..4: 15.9% 71.5% 12.6%
+[libx264 @ 0x3ae2700] mb P  I16..4:  5.1% 11.8%  0.4%  P16..4: 37.0%  7.4%  2.5%  0.0%  0.0%    skip:35.9%
+[libx264 @ 0x3ae2700] mb B  I16..4:  0.5%  1.4%  0.1%  B16..8: 28.5%  2.4%  0.3%  direct: 0.5%  skip:66.5%  L0:43.0% L1:54.1% BI: 2.9%
+[libx264 @ 0x3ae2700] 8x8 transform intra:68.9% inter:87.0%
+[libx264 @ 0x3ae2700] direct mvs  spatial:99.7% temporal:0.3%
+[libx264 @ 0x3ae2700] coded y,uvDC,uvAC intra: 41.9% 26.7% 3.9% inter: 6.9% 4.8% 0.1%
+[libx264 @ 0x3ae2700] i16 v,h,dc,p: 16% 38% 12% 34%
+[libx264 @ 0x3ae2700] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 17% 21% 17%  5%  6%  7%  9%  6% 11%
+[libx264 @ 0x3ae2700] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 14% 24%  9%  6% 10%  8% 12%  6% 11%
+[libx264 @ 0x3ae2700] i8c dc,h,v,p: 68% 20%  9%  3%
+[libx264 @ 0x3ae2700] Weighted P-Frames: Y:2.5% UV:0.7%
+[libx264 @ 0x3ae2700] ref P L0: 66.8% 18.1%  8.3%  3.6%  1.9%  1.3%  0.0%
+[libx264 @ 0x3ae2700] ref B L0: 88.5%  6.9%  3.9%  0.7%
+[libx264 @ 0x3ae2700] ref B L1: 88.0% 12.0%
+[libx264 @ 0x3ae2700] kb/s:3400.02
+
+real	3m16.510s
+user	58m11.316s
+sys	0m20.172s
