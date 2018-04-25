@@ -1,5 +1,3 @@
-
-
 ubuntu@ip-10-96-233-131:~/vid/tests/rcr_mr2_sw20_turbo$ time ffmpeg -hwaccel cuvid -c:v h264_cuvid -i rcr_mr2_sw20_turbo.mp4 -vf scale_npp=1280:720 -vcodec h264_nvenc multi_0_out.mp4 -vf scale_npp=960:540 -vcodec h264_nvenc multi_1_out.mp4
 ffmpeg version N-90813-g4ac0ff8 Copyright (c) 2000-2018 the FFmpeg developers
   built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
