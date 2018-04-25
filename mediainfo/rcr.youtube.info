@@ -1,0 +1,29 @@
+ubuntu@ip-10-96-212-165:/shared/vid/tests$ youtube-dl https://www.youtube.com/watch?v=qT5JfLaUb4I -F
+[youtube] qT5JfLaUb4I: Downloading webpage
+[youtube] qT5JfLaUb4I: Downloading video info webpage
+[youtube] qT5JfLaUb4I: Extracting video information
+WARNING: unable to extract uploader nickname
+[info] Available formats for qT5JfLaUb4I:
+format code  extension  resolution note
+249          webm       audio only DASH audio   51k , opus @ 50k, 2.61MiB
+250          webm       audio only DASH audio   63k , opus @ 70k, 3.14MiB
+251          webm       audio only DASH audio  115k , opus @160k, 5.65MiB
+171          webm       audio only DASH audio  123k , vorbis@128k, 4.86MiB
+140          m4a        audio only DASH audio  128k , m4a_dash container, mp4a.40.2@128k, 6.63MiB
+160          mp4        256x144    144p  111k , avc1.4d400c, 30fps, video only, 4.10MiB
+278          webm       256x144    144p  137k , webm container, vp9, 30fps, video only, 4.85MiB
+242          webm       426x240    240p  225k , vp9, 30fps, video only, 9.51MiB
+133          mp4        426x240    240p  310k , avc1.4d4015, 30fps, video only, 9.09MiB
+243          webm       640x360    360p  420k , vp9, 30fps, video only, 18.03MiB
+134          mp4        640x360    360p  751k , avc1.4d401e, 30fps, video only, 20.41MiB
+244          webm       854x480    480p  771k , vp9, 30fps, video only, 32.17MiB
+135          mp4        854x480    480p 1326k , avc1.4d401f, 30fps, video only, 38.18MiB
+247          webm       1280x720   720p 1539k , vp9, 30fps, video only, 57.81MiB
+136          mp4        1280x720   720p 2304k , avc1.4d401f, 30fps, video only, 65.09MiB
+248          webm       1920x1080  1080p 2672k , vp9, 30fps, video only, 102.07MiB
+137          mp4        1920x1080  1080p 4344k , avc1.640028, 30fps, video only, 109.89MiB
+36           3gp        320x?      small , mp4v.20.3,  mp4a.40.2
+17           3gp        176x144    small , mp4v.20.3,  mp4a.40.2@ 24k
+43           webm       640x360    medium , vp8.0,  vorbis@128k
+18           mp4        640x360    medium , avc1.42001E,  mp4a.40.2@ 96k
+22           mp4        1280x720   hd720 , avc1.64001F,  mp4a.40.2@192k (best)

@@ -1,0 +1,46 @@
+┌[11:32:27 -0400 EDT 2018-04-25] jmiller@jmiller-imac:~/work/brightcove/marvin-manager
+└[imac] (vice-3757) $ youtube-dl -F https://www.youtube.com/watch?v=tO01J-M3g0U
+[youtube] tO01J-M3g0U: Downloading webpage
+[youtube] tO01J-M3g0U: Downloading video info webpage
+[youtube] tO01J-M3g0U: Extracting video information
+[info] Available formats for tO01J-M3g0U:
+format code  extension  resolution note
+249          webm       audio only DASH audio   56k , opus @ 50k, 917.96KiB
+250          webm       audio only DASH audio   71k , opus @ 70k, 1.19MiB
+140          m4a        audio only DASH audio  127k , m4a_dash container, mp4a.40.2@128k, 2.34MiB
+171          webm       audio only DASH audio  128k , vorbis@128k, 2.06MiB
+251          webm       audio only DASH audio  140k , opus @160k, 2.37MiB
+160          mp4        256x144    144p  111k , avc1.4d400c, 30fps, video only, 1.14MiB
+278          webm       256x144    144p  111k , webm container, vp9, 30fps, video only, 1.64MiB
+330          webm       256x144    144p60 HDR  156k , vp9.2, 60fps, video only, 2.42MiB
+331          webm       426x240    240p60 HDR  233k , vp9.2, 60fps, video only, 3.73MiB
+133          mp4        426x240    240p  246k , avc1.4d4015, 30fps, video only, 2.34MiB
+242          webm       426x240    240p  251k , vp9, 30fps, video only, 3.39MiB
+243          webm       640x360    360p  463k , vp9, 30fps, video only, 6.38MiB
+332          webm       640x360    360p60 HDR  485k , vp9.2, 60fps, video only, 7.98MiB
+134          mp4        640x360    360p  731k , avc1.4d401e, 30fps, video only, 6.91MiB
+244          webm       854x480    480p  879k , vp9, 30fps, video only, 11.63MiB
+333          webm       854x480    480p60 HDR  922k , vp9.2, 60fps, video only, 15.24MiB
+135          mp4        854x480    480p 1351k , avc1.4d401f, 30fps, video only, 14.17MiB
+247          webm       1280x720   720p 1581k , vp9, 30fps, video only, 23.40MiB
+334          webm       1280x720   720p60 HDR 2054k , vp9.2, 60fps, video only, 34.66MiB
+136          mp4        1280x720   720p 2714k , avc1.4d401f, 30fps, video only, 27.95MiB
+248          webm       1920x1080  1080p 2731k , vp9, 30fps, video only, 41.18MiB
+302          webm       1280x720   720p60 2762k , vp9, 60fps, video only, 39.43MiB
+335          webm       1920x1080  1080p60 HDR 3470k , vp9.2, 60fps, video only, 58.68MiB
+298          mp4        1280x720   720p60 4067k , avc1.4d4020, 60fps, video only, 45.74MiB
+303          webm       1920x1080  1080p60 4622k , vp9, 60fps, video only, 67.45MiB
+137          mp4        1920x1080  1080p 4842k , avc1.640028, 30fps, video only, 50.19MiB
+299          mp4        1920x1080  1080p60 6774k , avc1.64002a, 60fps, video only, 81.23MiB
+271          webm       2560x1440  1440p 8908k , vp9, 30fps, video only, 126.08MiB
+336          webm       2560x1440  1440p60 HDR 9061k , vp9.2, 60fps, video only, 159.28MiB
+264          mp4        2560x1440  1440p 10389k , avc1.640032, 30fps, video only, 114.63MiB
+308          webm       2560x1440  1440p60 13361k , vp9, 60fps, video only, 196.09MiB
+313          webm       3840x2160  2160p 17975k , vp9, 30fps, video only, 290.86MiB
+337          webm       3840x2160  2160p60 HDR 18670k , vp9.2, 60fps, video only, 322.80MiB
+315          webm       3840x2160  2160p60 27387k , vp9, 60fps, video only, 447.47MiB
+17           3gp        176x144    small , mp4v.20.3, mp4a.40.2@ 24k
+36           3gp        320x180    small , mp4v.20.3, mp4a.40.2
+43           webm       640x360    medium , vp8.0, vorbis@128k
+18           mp4        640x360    medium , avc1.42001E, mp4a.40.2@ 96k
+22           mp4        1280x720   hd720 , avc1.64001F, mp4a.40.2@192k (best)
