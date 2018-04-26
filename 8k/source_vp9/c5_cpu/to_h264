@@ -1,0 +1,71 @@
+ubuntu@ip-10-96-212-165:/shared/vid/tests/4320p.vp9_scotland$ time ffmpeg -y -c:v vp9 -i 4320p.vp9.webm -c:v libx264 4320p.h264.mp4
+ffmpeg version N-90811-g2442cf3 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
+  configuration: --prefix=/home/ubuntu/ffmpeg_build --pkg-config-flags=--static --extra-cflags=-I/home/ubuntu/ffmpeg_build/include --extra-ldflags=-L/home/ubuntu/ffmpeg_build/lib --extra-libs='-lpthread -lm' --bindir=/home/ubuntu/bin --enable-gpl --enable-libass --enable-libfdk-aac --enable-libfreetype --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-nonfree
+  libavutil      56. 15.100 / 56. 15.100
+  libavcodec     58. 19.100 / 58. 19.100
+  libavformat    58. 13.100 / 58. 13.100
+  libavdevice    58.  4.100 / 58.  4.100
+  libavfilter     7. 19.100 /  7. 19.100
+  libswscale      5.  2.100 /  5.  2.100
+  libswresample   3.  2.100 /  3.  2.100
+  libpostproc    55.  2.100 / 55.  2.100
+Input #0, matroska,webm, from '4320p.vp9.webm':
+  Metadata:
+    ENCODER         : Lavf58.13.100
+  Duration: 00:04:09.82, start: -0.007000, bitrate: 21872 kb/s
+    Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(tv, bt709/unknown/unknown), 8192x4320, SAR 1:1 DAR 256:135, 23.98 fps, 23.98 tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      DURATION        : 00:04:09.791000000
+    Stream #0:1(eng): Audio: opus, 48000 Hz, stereo, fltp (default)
+    Metadata:
+      DURATION        : 00:04:09.821000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (vp9 (native) -> h264 (libx264))
+  Stream #0:1 -> #0:1 (opus (native) -> aac (native))
+Press [q] to stop, [?] for help
+[libx264 @ 0x38c3a40] using SAR=1/1
+[libx264 @ 0x38c3a40] frame MB size (512x270) > level limit (36864)
+[libx264 @ 0x38c3a40] DPB size (4 frames, 552960 mbs) > level limit (1 frames, 184320 mbs)
+[libx264 @ 0x38c3a40] MB rate (3314445) > level limit (2073600)
+[libx264 @ 0x38c3a40] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 AVX2 LZCNT BMI2
+[libx264 @ 0x38c3a40] profile High, level 5.2
+[libx264 @ 0x38c3a40] 264 - core 148 r2643 5c65704 - H.264/MPEG-4 AVC codec - Copyleft 2003-2015 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=54 lookahead_threads=9 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=23 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to '4320p.h264.mp4':
+  Metadata:
+    encoder         : Lavf58.13.100
+    Stream #0:0(eng): Video: h264 (libx264) (avc1 / 0x31637661), yuv420p, 8192x4320 [SAR 1:1 DAR 256:135], q=-1--1, 23.98 fps, 24k tbn, 23.98 tbc (default)
+    Metadata:
+      DURATION        : 00:04:09.791000000
+      encoder         : Lavc58.19.100 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: -1
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      DURATION        : 00:04:09.821000000
+      encoder         : Lavc58.19.100 aac
+frame= 5989 fps=9.3 q=-1.0 Lsize= 2105973kB time=00:04:09.81 bitrate=69060.0kbits/s speed=0.39x    
+video:2101906kB audio:3919kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.007021%
+[libx264 @ 0x38c3a40] frame I:89    Avg QP:18.71  size:1818344
+[libx264 @ 0x38c3a40] frame P:4020  Avg QP:21.71  size:433687
+[libx264 @ 0x38c3a40] frame B:1880  Avg QP:22.79  size:131433
+[libx264 @ 0x38c3a40] consecutive B-frames: 51.8% 16.3%  8.1% 23.8%
+[libx264 @ 0x38c3a40] mb I  I16..4: 12.9% 80.7%  6.4%
+[libx264 @ 0x38c3a40] mb P  I16..4:  6.7% 18.7%  0.4%  P16..4: 34.8%  7.0%  2.4%  0.0%  0.0%    skip:30.0%
+[libx264 @ 0x38c3a40] mb B  I16..4:  0.7%  1.1%  0.0%  B16..8: 27.6%  1.9%  0.3%  direct: 2.5%  skip:65.9%  L0:45.6% L1:50.9% BI: 3.5%
+[libx264 @ 0x38c3a40] 8x8 transform intra:72.6% inter:85.4%
+[libx264 @ 0x38c3a40] coded y,uvDC,uvAC intra: 34.7% 34.3% 9.8% inter: 16.2% 19.7% 1.0%
+[libx264 @ 0x38c3a40] i16 v,h,dc,p: 22% 37%  8% 33%
+[libx264 @ 0x38c3a40] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 25% 23%  3%  4%  4%  6%  3%  5%
+[libx264 @ 0x38c3a40] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 15% 34% 10%  5%  9%  6% 11%  4%  6%
+[libx264 @ 0x38c3a40] i8c dc,h,v,p: 63% 20% 14%  4%
+[libx264 @ 0x38c3a40] Weighted P-Frames: Y:5.2% UV:1.9%
+[libx264 @ 0x38c3a40] ref P L0: 65.4% 21.0%  9.8%  3.6%  0.2%
+[libx264 @ 0x38c3a40] ref B L0: 93.6%  5.8%  0.6%
+[libx264 @ 0x38c3a40] ref B L1: 98.7%  1.3%
+[libx264 @ 0x38c3a40] kb/s:68932.80
+[aac @ 0x38c10c0] Qavg: 158.796
+
+real	10m41.456s
+user	295m17.368s
+sys	0m20.488s
