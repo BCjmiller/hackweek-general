@@ -1,0 +1,51 @@
+ubuntu@ip-10-96-233-131:~/vid/tests/1080p.vp9_earth$ time ffmpeg -y -hwaccel cuvid -c:v h264_cuvid -i 1080p.h264.ll.mp4 -c:v h264_nvenc out/1080p.h264.mp4
+ffmpeg version N-90813-g4ac0ff8 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
+  configuration: --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
+  libavutil      56. 15.100 / 56. 15.100
+  libavcodec     58. 19.100 / 58. 19.100
+  libavformat    58. 13.100 / 58. 13.100
+  libavdevice    58.  4.100 / 58.  4.100
+  libavfilter     7. 19.100 /  7. 19.100
+  libswscale      5.  2.100 /  5.  2.100
+  libswresample   3.  2.100 /  3.  2.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '1080p.h264.ll.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.13.100
+  Duration: 00:02:47.29, start: 0.000000, bitrate: 92730 kb/s
+    Stream #0:0(eng): Video: h264 (High 4:4:4 Predictive) (avc1 / 0x31637661), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], 92599 kb/s, 23.98 fps, 23.98 tbr, 24k tbn, 47.95 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 127 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (h264_cuvid) -> h264 (h264_nvenc))
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, mp4, to 'out/1080p.h264.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.13.100
+    Stream #0:0(eng): Video: h264 (h264_nvenc) (Main) (avc1 / 0x31637661), cuda, 1920x1080 [SAR 1:1 DAR 16:9], q=-1--1, 2000 kb/s, 23.98 fps, 24k tbn, 23.98 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.19.100 h264_nvenc
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/2000000 buffer size: 4000000 vbv_delay: -1
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      encoder         : Lavc58.19.100 aac
+frame= 4016 fps=249 q=28.0 Lsize=   43808kB time=00:02:47.45 bitrate=2143.1kbits/s dup=5 drop=0 speed=10.4x    
+video:41114kB audio:2611kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.190532%
+[aac @ 0x3b99880] Qavg: 579.305
+
+real	0m17.493s
+user	0m6.344s
+sys	0m2.328s

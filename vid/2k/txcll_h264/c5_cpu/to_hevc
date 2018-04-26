@@ -1,0 +1,75 @@
+ubuntu@ip-10-96-212-165:/shared/vid/tests/1080p.vp9_earth$ time ffmpeg -c:v h264 -i 1080p.h264.ll.mp4 -c:v libx265 out/h264_to_hevc.mov
+ffmpeg version N-90811-g2442cf3 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
+  configuration: --prefix=/home/ubuntu/ffmpeg_build --pkg-config-flags=--static --extra-cflags=-I/home/ubuntu/ffmpeg_build/include --extra-ldflags=-L/home/ubuntu/ffmpeg_build/lib --extra-libs='-lpthread -lm' --bindir=/home/ubuntu/bin --enable-gpl --enable-libass --enable-libfdk-aac --enable-libfreetype --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-nonfree
+  libavutil      56. 15.100 / 56. 15.100
+  libavcodec     58. 19.100 / 58. 19.100
+  libavformat    58. 13.100 / 58. 13.100
+  libavdevice    58.  4.100 / 58.  4.100
+  libavfilter     7. 19.100 /  7. 19.100
+  libswscale      5.  2.100 /  5.  2.100
+  libswresample   3.  2.100 /  3.  2.100
+  libpostproc    55.  2.100 / 55.  2.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '1080p.h264.ll.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.13.100
+  Duration: 00:02:47.29, start: 0.000000, bitrate: 92730 kb/s
+    Stream #0:0(eng): Video: h264 (High 4:4:4 Predictive) (avc1 / 0x31637661), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], 92599 kb/s, 23.98 fps, 23.98 tbr, 24k tbn, 47.95 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 127 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> hevc (libx265))
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+x265 [info]: HEVC encoder version 2.7+336-07defe235cde
+x265 [info]: build info [Linux][GCC 5.4.0][64 bit][noasm] 8bit
+x265 [info]: using cpu capabilities: none!
+x265 [info]: Main profile, Level-4 (Main tier)
+x265 [info]: Thread pool created using 36 threads
+x265 [info]: Slices                              : 1
+x265 [info]: frame threads / pool features       : 5 / wpp(17 rows)
+x265 [info]: Coding QT: max CU size, min CU size : 64 / 8
+x265 [info]: Residual QT: max TU size, max depth : 32 / 1 inter / 1 intra
+x265 [info]: ME / range / subpel / merge         : hex / 57 / 2 / 2
+x265 [info]: Keyframe min / max / scenecut / bias: 23 / 250 / 40 / 5.00
+x265 [info]: Lookahead / bframes / badapt        : 20 / 4 / 2
+x265 [info]: b-pyramid / weightp / weightb       : 1 / 1 / 0
+x265 [info]: References / ref-limit  cu / depth  : 3 / on / on
+x265 [info]: AQ: mode / str / qg-size / cu-tree  : 1 / 1.0 / 32 / 1
+x265 [info]: Rate Control / qCompress            : CRF-28.0 / 0.60
+x265 [info]: tools: rd=3 psy-rd=2.00 rskip signhide tmvp strong-intra-smoothing
+x265 [info]: tools: lslices=6 deblock sao
+Output #0, mov, to 'out/h264_to_hevc.mov':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.13.100
+    Stream #0:0(eng): Video: hevc (libx265) (hev1 / 0x31766568), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 23.98 fps, 24k tbn, 23.98 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.19.100 libx265
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      encoder         : Lavc58.19.100 aac
+frame= 4011 fps=7.8 q=-0.0 Lsize=   41282kB time=00:02:47.18 bitrate=2022.7kbits/s speed=0.323x    
+video:38553kB audio:2611kB subtitle:0kB other streams:0kB global headers:2kB muxing overhead: 0.287648%
+x265 [info]: frame I:     66, Avg QP:25.33  kb/s: 9713.77 
+x265 [info]: frame P:   1236, Avg QP:28.77  kb/s: 3238.56 
+x265 [info]: frame B:   2709, Avg QP:33.48  kb/s: 1079.78 
+x265 [info]: Weighted P-Frames: Y:11.1% UV:4.9%
+x265 [info]: consecutive B-frames: 22.4% 10.1% 17.9% 36.3% 13.3% 
+
+encoded 4011 frames in 516.89s (7.76 fps), 1887.08 kb/s, Avg QP:31.90
+[aac @ 0x31d2040] Qavg: 579.305
+
+real	8m36.997s
+user	140m25.776s
+sys	0m7.484s

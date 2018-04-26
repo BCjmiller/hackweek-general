@@ -1,0 +1,69 @@
+ubuntu@ip-10-96-212-165:~/vid/tests$ time ffmpeg -y -c:v vp9 -i 4320p.vp9.webm -c:v libx265 4320p.hevc.libx265.mov
+ffmpeg version N-90811-g2442cf3 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
+  configuration: --prefix=/home/ubuntu/ffmpeg_build --pkg-config-flags=--static --extra-cflags=-I/home/ubuntu/ffmpeg_build/include --extra-ldflags=-L/home/ubuntu/ffmpeg_build/lib --extra-libs='-lpthread -lm' --bindir=/home/ubuntu/bin --enable-gpl --enable-libass --enable-libfdk-aac --enable-libfreetype --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libx265 --enable-nonfree
+  libavutil      56. 15.100 / 56. 15.100
+  libavcodec     58. 19.100 / 58. 19.100
+  libavformat    58. 13.100 / 58. 13.100
+  libavdevice    58.  4.100 / 58.  4.100
+  libavfilter     7. 19.100 /  7. 19.100
+  libswscale      5.  2.100 /  5.  2.100
+  libswresample   3.  2.100 /  3.  2.100
+  libpostproc    55.  2.100 / 55.  2.100
+Input #0, matroska,webm, from '4320p.vp9.webm':
+  Metadata:
+    ENCODER         : Lavf58.13.100
+  Duration: 00:04:09.82, start: -0.007000, bitrate: 21872 kb/s
+    Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(tv, bt709/unknown/unknown), 8192x4320, SAR 1:1 DAR 256:135, 23.98 fps, 23.98 tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      DURATION        : 00:04:09.791000000
+    Stream #0:1(eng): Audio: opus, 48000 Hz, stereo, fltp (default)
+    Metadata:
+      DURATION        : 00:04:09.821000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (vp9 (native) -> hevc (libx265))
+  Stream #0:1 -> #0:1 (opus (native) -> aac (native))
+Press [q] to stop, [?] for help
+x265 [info]: HEVC encoder version 2.7+336-07defe235cde
+x265 [info]: build info [Linux][GCC 5.4.0][64 bit][noasm] 8bit
+x265 [info]: using cpu capabilities: none!
+x265 [info]: Main profile, Level-6 (Main tier)
+x265 [info]: Thread pool created using 36 threads
+x265 [info]: Slices                              : 1
+x265 [info]: frame threads / pool features       : 6 / wpp(68 rows)
+x265 [info]: Coding QT: max CU size, min CU size : 64 / 8
+x265 [info]: Residual QT: max TU size, max depth : 32 / 1 inter / 1 intra
+x265 [info]: ME / range / subpel / merge         : hex / 57 / 2 / 2
+x265 [info]: Keyframe min / max / scenecut / bias: 23 / 250 / 40 / 5.00
+x265 [info]: Lookahead / bframes / badapt        : 20 / 4 / 2
+x265 [info]: b-pyramid / weightp / weightb       : 1 / 1 / 0
+x265 [info]: References / ref-limit  cu / depth  : 3 / on / on
+x265 [info]: AQ: mode / str / qg-size / cu-tree  : 1 / 1.0 / 32 / 1
+x265 [info]: Rate Control / qCompress            : CRF-28.0 / 0.60
+x265 [info]: tools: rd=3 psy-rd=2.00 rskip signhide tmvp strong-intra-smoothing
+x265 [info]: tools: lslices=8 deblock sao
+Output #0, mov, to '4320p.hevc.libx265.mov':
+  Metadata:
+    encoder         : Lavf58.13.100
+    Stream #0:0(eng): Video: hevc (libx265) (hev1 / 0x31766568), yuv420p, 8192x4320 [SAR 1:1 DAR 256:135], q=2-31, 23.98 fps, 24k tbn, 23.98 tbc (default)
+    Metadata:
+      DURATION        : 00:04:09.791000000
+      encoder         : Lavc58.19.100 libx265
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      DURATION        : 00:04:09.821000000
+      encoder         : Lavc58.19.100 aac
+frame= 5989 fps=0.5 q=-0.0 Lsize=  706430kB time=00:04:09.81 bitrate=23165.5kbits/s speed=0.0229x    
+video:702337kB audio:3919kB subtitle:0kB other streams:0kB global headers:2kB muxing overhead: 0.024522%
+x265 [info]: frame I:     76, Avg QP:25.57  kb/s: 165566.28
+x265 [info]: frame P:   1966, Avg QP:27.38  kb/s: 39120.22
+x265 [info]: frame B:   3947, Avg QP:31.52  kb/s: 12274.95
+x265 [info]: Weighted P-Frames: Y:4.5% UV:3.0%
+x265 [info]: consecutive B-frames: 28.9% 9.0% 15.6% 32.7% 13.8% 
+
+encoded 5989 frames in 10924.55s (0.55 fps), 23032.66 kb/s, Avg QP:30.09
+[aac @ 0x24ea740] Qavg: 158.796
+
+real	182m4.968s
+user	4665m28.304s
+sys	0m46.220s

@@ -1,0 +1,45 @@
+ubuntu@ip-10-96-233-131:~/vid/tests/1080p.vp9_earth$ time ffmpeg -y -hwaccel cuvid -c:v vp9_cuvid -i 1080p.vp9.webm -c:v h264_nvenc 1080p.h264.mp4
+ffmpeg version N-90813-g4ac0ff8 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
+  configuration: --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
+  libavutil      56. 15.100 / 56. 15.100
+  libavcodec     58. 19.100 / 58. 19.100
+  libavformat    58. 13.100 / 58. 13.100
+  libavdevice    58.  4.100 / 58.  4.100
+  libavfilter     7. 19.100 /  7. 19.100
+  libswscale      5.  2.100 /  5.  2.100
+  libswresample   3.  2.100 /  3.  2.100
+Input #0, matroska,webm, from '1080p.vp9.webm':
+  Metadata:
+    ENCODER         : Lavf57.83.100
+  Duration: 00:02:47.18, start: -0.007000, bitrate: 2376 kb/s
+    Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(tv), 1920x1080, SAR 1:1 DAR 16:9, 23.98 fps, 23.98 tbr, 1k tbn, 1k tbc (default)
+    Metadata:
+      DURATION        : 00:02:47.166000000
+    Stream #0:1(eng): Audio: opus, 48000 Hz, stereo, fltp (default)
+    Metadata:
+      DURATION        : 00:02:47.181000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (vp9 (vp9_cuvid) -> h264 (h264_nvenc))
+  Stream #0:1 -> #0:1 (opus (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, mp4, to '1080p.h264.mp4':
+  Metadata:
+    encoder         : Lavf58.13.100
+    Stream #0:0(eng): Video: h264 (h264_nvenc) (Main) (avc1 / 0x31637661), cuda, 1920x1080 [SAR 1:1 DAR 16:9], q=-1--1, 2000 kb/s, 23.98 fps, 24k tbn, 23.98 tbc (default)
+    Metadata:
+      DURATION        : 00:02:47.166000000
+      encoder         : Lavc58.19.100 h264_nvenc
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/2000000 buffer size: 4000000 vbv_delay: -1
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      DURATION        : 00:02:47.181000000
+      encoder         : Lavc58.19.100 aac
+frame= 4011 fps=455 q=28.0 Lsize=   43805kB time=00:02:47.25 bitrate=2145.6kbits/s dup=3 drop=0 speed=  19x    
+video:41114kB audio:2608kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.190517%
+[aac @ 0x325c400] Qavg: 578.597
+
+real	0m10.148s
+user	0m4.816s
+sys	0m1.764s

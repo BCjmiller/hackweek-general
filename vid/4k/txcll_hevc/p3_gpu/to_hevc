@@ -1,0 +1,52 @@
+ubuntu@ip-10-96-233-131:~/vid/tests/2160p.vp9_forceawakens$ time ffmpeg -y -hwaccel cuvid -c:v hevc_cuvid -i 2160p.hevc.ll.mov -c:v hevc_nvenc srchevc/2160p.hevc.mov
+ffmpeg version N-90813-g4ac0ff8 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
+  configuration: --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
+  libavutil      56. 15.100 / 56. 15.100
+  libavcodec     58. 19.100 / 58. 19.100
+  libavformat    58. 13.100 / 58. 13.100
+  libavdevice    58.  4.100 / 58.  4.100
+  libavfilter     7. 19.100 /  7. 19.100
+  libswscale      5.  2.100 /  5.  2.100
+  libswresample   3.  2.100 /  3.  2.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '2160p.hevc.ll.mov':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 512
+    compatible_brands: qt  
+    encoder         : Lavf58.13.100
+  Duration: 00:01:30.32, start: 0.000000, bitrate: 116218 kb/s
+    Stream #0:0(eng): Video: hevc (Main) (hev1 / 0x31766568), yuv420p(tv, progressive), 3840x2160 [SAR 1:1 DAR 16:9], 116094 kb/s, 25 fps, 25 tbr, 12800 tbn, 25 tbc (default)
+    Metadata:
+      handler_name    : DataHandler
+      encoder         : Lavc58.19.100 hevc_nvenc
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 119 kb/s (default)
+    Metadata:
+      handler_name    : DataHandler
+Stream mapping:
+  Stream #0:0 -> #0:0 (hevc (hevc_cuvid) -> hevc (hevc_nvenc))
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, mov, to 'srchevc/2160p.hevc.mov':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 512
+    compatible_brands: qt  
+    encoder         : Lavf58.13.100
+    Stream #0:0(eng): Video: hevc (hevc_nvenc) (Main) (hev1 / 0x31766568), cuda, 3840x2160 [SAR 1:1 DAR 16:9], q=-1--1, 2000 kb/s, 25 fps, 12800 tbn, 25 tbc (default)
+    Metadata:
+      handler_name    : DataHandler
+      encoder         : Lavc58.19.100 hevc_nvenc
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/2000000 buffer size: 4000000 vbv_delay: -1
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : DataHandler
+      encoder         : Lavc58.19.100 aac
+frame= 2262 fps= 80 q=31.0 Lsize=   15813kB time=00:01:30.44 bitrate=1432.4kbits/s dup=4 drop=0 speed=3.21x    
+video:14440kB audio:1316kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.367376%
+[aac @ 0x350d680] Qavg: 11771.604
+
+real	0m29.547s
+user	0m4.412s
+sys	0m2.500s
