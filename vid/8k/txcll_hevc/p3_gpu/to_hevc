@@ -1,0 +1,51 @@
+ubuntu@ip-10-96-233-131:~/vid/tests/4320p.vp9_scotland$ time ffmpeg -y -hwaccel cuvid -c:v hevc_cuvid -i 4320p.hevc.ll.mov -c:v hevc_nvenc gpu/hevc_to_hevc.mp4
+ffmpeg version N-90813-g4ac0ff8 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
+  configuration: --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64
+  libavutil      56. 15.100 / 56. 15.100
+  libavcodec     58. 19.100 / 58. 19.100
+  libavformat    58. 13.100 / 58. 13.100
+  libavdevice    58.  4.100 / 58.  4.100
+  libavfilter     7. 19.100 /  7. 19.100
+  libswscale      5.  2.100 /  5.  2.100
+  libswresample   3.  2.100 /  3.  2.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '4320p.hevc.ll.mov':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2mp41
+    encoder         : Lavf58.13.100
+  Duration: 00:04:09.92, start: 0.000000, bitrate: 1523166 kb/s
+    Stream #0:0(eng): Video: hevc (Main) (hev1 / 0x31766568), yuv420p(tv, progressive), 8192x4320 [SAR 1:1 DAR 256:135], 1523036 kb/s, 23.98 fps, 23.98 tbr, 24k tbn, 23.98 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+Stream mapping:
+  Stream #0:0 -> #0:0 (hevc (hevc_cuvid) -> hevc (hevc_nvenc))
+  Stream #0:1 -> #0:1 (aac (native) -> aac (native))
+Press [q] to stop, [?] for help
+Output #0, mp4, to 'gpu/hevc_to_hevc.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2mp41
+    encoder         : Lavf58.13.100
+    Stream #0:0(eng): Video: hevc (hevc_nvenc) (Main) (hev1 / 0x31766568), cuda, 8192x4320 [SAR 1:1 DAR 256:135], q=-1--1, 2000 kb/s, 23.98 fps, 24k tbn, 23.98 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.19.100 hevc_nvenc
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/2000000 buffer size: 4000000 vbv_delay: -1
+    Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      encoder         : Lavc58.19.100 aac
+frame= 5996 fps= 19 q=46.0 Lsize=  171251kB time=00:04:10.04 bitrate=5610.6kbits/s dup=4 drop=0 speed=0.774x    
+video:167206kB audio:3921kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.072368%
+[aac @ 0x2af7040] Qavg: 154.736
+
+real	5m24.396s
+user	1m16.468s
+sys	0m15.908s
