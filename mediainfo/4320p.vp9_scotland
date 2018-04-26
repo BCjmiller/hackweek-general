@@ -1,0 +1,40 @@
+ubuntu@ip-10-96-212-165:/shared/vid/tests$ mediainfo 4320p.vp9_scotland/4320p.vp9.webm
+General
+Complete name                            : 4320p.vp9_scotland/4320p.vp9.webm
+Format                                   : WebM
+Format version                           : Version 4 / Version 2
+File size                                : 651 MiB
+Duration                                 : 4mn 9s
+Overall bit rate                         : 21.9 Mbps
+Writing application                      : Lavf58.13.100
+Writing library                          : Lavf58.13.100 / Lavf58.13.100
+
+Video
+ID                                       : 1
+Format                                   : VP9
+Codec ID                                 : V_VP9
+Duration                                 : 4mn 9s
+Width                                    : 8 192 pixels
+Height                                   : 4 320 pixels
+Display aspect ratio                     : 1.896
+Frame rate mode                          : Constant
+Frame rate                               : 23.976 (24000/1001) fps
+Language                                 : English
+Default                                  : Yes
+Forced                                   : No
+DURATION                                 : 00:04:09.791000000
+
+Audio
+ID                                       : 2
+Format                                   : Opus
+Codec ID                                 : A_OPUS
+Duration                                 : 4mn 9s
+Channel(s)                               : 2 channels
+Channel positions                        : Front: L R
+Sampling rate                            : 48.0 KHz
+Bit depth                                : 32 bits
+Compression mode                         : Lossy
+Language                                 : English
+Default                                  : Yes
+Forced                                   : No
+DURATION                                 : 00:04:09.821000000

@@ -1,0 +1,33 @@
+ubuntu@ip-10-96-212-165:/shared/vid/tests$ youtube-dl https://www.youtube.com/watch?v=AIid7k3m4KE -F
+[youtube] AIid7k3m4KE: Downloading webpage
+[youtube] AIid7k3m4KE: Downloading video info webpage
+[youtube] AIid7k3m4KE: Extracting video information
+WARNING: unable to extract uploader nickname
+[info] Available formats for AIid7k3m4KE:
+format code  extension  resolution note
+249          webm       audio only DASH audio   69k , opus @ 50k, 1.60MiB
+250          webm       audio only DASH audio   87k , opus @ 70k, 2.11MiB
+140          m4a        audio only DASH audio  127k , m4a_dash container, mp4a.40.2@128k, 3.79MiB
+171          webm       audio only DASH audio  142k , vorbis@128k, 3.96MiB
+251          webm       audio only DASH audio  164k , opus @160k, 4.13MiB
+278          webm       256x136    144p   95k , webm container, vp9, 24fps, video only, 2.43MiB
+160          mp4        256x136    144p  105k , avc1.4d400c, 24fps, video only, 2.18MiB
+242          webm       426x224    240p  215k , vp9, 24fps, video only, 5.40MiB
+133          mp4        426x224    240p  231k , avc1.4d400d, 24fps, video only, 4.30MiB
+243          webm       640x338    360p  406k , vp9, 24fps, video only, 10.09MiB
+134          mp4        640x338    360p  612k , avc1.4d401e, 24fps, video only, 13.35MiB
+244          webm       854x450    480p  737k , vp9, 24fps, video only, 18.57MiB
+135          mp4        854x450    480p 1268k , avc1.4d401e, 24fps, video only, 27.62MiB
+247          webm       1280x676   720p 1481k , vp9, 24fps, video only, 37.08MiB
+136          mp4        1280x676   720p 2522k , avc1.4d401f, 24fps, video only, 55.79MiB
+248          webm       1920x1012  1080p 2550k , vp9, 24fps, video only, 64.63MiB
+137          mp4        1920x1012  1080p 4119k , avc1.640028, 24fps, video only, 102.05MiB
+271          webm       2560x1350  1440p 8394k , vp9, 24fps, video only, 207.87MiB
+264          mp4        2560x1350  1440p 10390k , avc1.640032, 24fps, video only, 248.70MiB
+313          webm       3840x2026  2160p 17171k , vp9, 24fps, video only, 425.08MiB
+272          webm       8192x4320  4320p 24989k , vp9, 24fps, video only, 647.25MiB
+36           3gp        320x?      small , mp4v.20.3,  mp4a.40.2
+17           3gp        176x144    small , mp4v.20.3,  mp4a.40.2@ 24k
+43           webm       640x360    medium , vp8.0,  vorbis@128k
+18           mp4        640x360    medium , avc1.42001E,  mp4a.40.2@ 96k
+22           mp4        1280x720   hd720 , avc1.64001F,  mp4a.40.2@192k (best)

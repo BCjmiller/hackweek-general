@@ -1,0 +1,44 @@
+ubuntu@ip-10-96-212-165:/shared/vid/tests$ mediainfo 2160p.vp9_forceawakens/
+General
+Unique ID                                : 185155985221078656587124433178026035988 (0x8B4BBEE1BCC72EB51F6AED35D0CFCB14)
+Complete name                            : 2160p.vp9_forceawakens/2160p.vp9.mkv
+Format                                   : Matroska
+Format version                           : Version 4 / Version 2
+File size                                : 72.7 MiB
+Duration                                 : 1mn 30s
+Overall bit rate                         : 6 753 Kbps
+Writing application                      : Lavf58.13.100
+Writing library                          : Lavf58.13.100 / Lavf58.13.100
+ErrorDetectionType                       : Per level 1
+
+Video
+ID                                       : 1
+Format                                   : VP9
+Codec ID                                 : V_VP9
+Duration                                 : 1mn 30s
+Width                                    : 3 840 pixels
+Height                                   : 2 160 pixels
+Display aspect ratio                     : 16:9
+Frame rate mode                          : Constant
+Frame rate                               : 25.000 fps
+Language                                 : English
+Default                                  : Yes
+Forced                                   : No
+DURATION                                 : 00:01:30.200000000
+
+Audio
+ID                                       : 2
+Format                                   : AAC
+Format/Info                              : Advanced Audio Codec
+Format profile                           : LC
+Codec ID                                 : A_AAC
+Duration                                 : 1mn 30s
+Channel(s)                               : 2 channels
+Channel positions                        : Front: L R
+Sampling rate                            : 44.1 KHz
+Frame rate                               : 43.066 fps (1024 spf)
+Compression mode                         : Lossy
+Default                                  : Yes
+Forced                                   : No
+DURATION                                 : 00:01:30.256000000
+HANDLER_NAME                             : SoundHandler
